@@ -24,6 +24,7 @@ menu{
 .mobile-days-controller{
   box-sizing: border-box;
   list-style: none;
+  margin: 30px 0 0;
   padding: 0 20px;
   @include self-clear;
 
@@ -85,8 +86,16 @@ menu{
     display: none;
   }
 
-  .day.column{
-    border-bottom: 1px solid #ccc;
-  }
+  .day-column{
+    box-sizing: border-box;
+    position: absolute;
+    padding: 0 20px;
+    margin: 0;
+    left: -100%;
+    width: 100%;
 
+    &.is-active{
+      left: 0;
+    }
+  }
 }
