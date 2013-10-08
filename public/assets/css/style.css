@@ -3864,13 +3864,6 @@ a.th {
   box-sizing: border-box;
   padding: 20px; }
 
-.day.column {
-  border-bottom: 1px solid #cccccc; }
-
-.mobile-days-controller {
-  box-sizing: border-box;
-  padding: 0 20px; }
-
 menu {
   padding: 0; }
 
@@ -3888,7 +3881,9 @@ menu {
   color: inherit; }
 
 .mobile-days-controller {
-  list-style: none; }
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0 20px; }
   .mobile-days-controller:after, .mobile-days-controller:before {
     display: table;
     content: ""; }
@@ -3931,5 +3926,9 @@ menu {
     .mobile-day-controller {
       display: none; } }
 
-.days-list .day-header {
-  display: none; }
+.days-list {
+  position: relative; }
+  .days-list .day-header {
+    display: none; }
+  .days-list .day.column {
+    border-bottom: 1px solid #cccccc; }
