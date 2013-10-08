@@ -7313,6 +7313,16 @@ menu {
   list-style: none;
 }
 
+.mobile-days-controller:after,
+.mobile-days-controller:before {
+  display: table;
+  content: "";
+}
+
+.mobile-days-controller:after {
+  clear: both;
+}
+
 .mobile-days-controller li {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -7371,4 +7381,8 @@ menu {
   .mobile-day-controller {
     display: none;
   }
+}
+
+.days-list .day-header {
+  display: none;
 }

@@ -23,6 +23,7 @@ menu{
 // Days controller
 .mobile-days-controller{
   list-style: none;
+  @include self-clear;
 
   li{
     box-sizing: border-box;
@@ -70,6 +71,13 @@ menu{
   }
 
   @media screen and (min-width: $breakSingleColumn){
+    display: none;
+  }
+}
+
+// Days list
+.days-list{
+  .day-header{
     display: none;
   }
 }

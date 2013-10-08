@@ -3889,6 +3889,11 @@ menu {
 
 .mobile-days-controller {
   list-style: none; }
+  .mobile-days-controller:after, .mobile-days-controller:before {
+    display: table;
+    content: ""; }
+  .mobile-days-controller:after {
+    clear: both; }
   .mobile-days-controller li {
     box-sizing: border-box;
     display: block;
@@ -3925,3 +3930,6 @@ menu {
   @media screen and (min-width: 768px) {
     .mobile-day-controller {
       display: none; } }
+
+.days-list .day-header {
+  display: none; }
