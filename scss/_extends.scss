@@ -1,0 +1,75 @@
+menu{
+  padding: 0;
+}
+
+// Task panels
+.task.panel{
+  display: block;
+  padding: 10px 20x;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.center{
+  text-align: center;
+}
+
+.subheader abbr{
+  border: none;
+  color: inherit;
+}
+
+
+// Days controller
+.mobile-days-controller{
+  list-style: none;
+
+  li{
+    box-sizing: border-box;
+    display: block;
+    list-style: none;
+    float: left;
+    padding: 0 5px;
+    width: 20%;
+  }
+}
+
+.mobile-day-controller{
+  border-radius: 30px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  color: $primary-color;
+  display: block;
+  line-height: 1;
+  padding: 10px 0;
+  text-align: center;
+  transition: all .2s ease-in-out;
+  width: auto;
+
+  sup{
+    display: none;
+  }
+
+  .date, .day{
+    display: block;
+  }
+
+  .day{
+    font-weight: bold;
+    text-transform: uppercase
+  }
+
+  &.is-active, &:hover.is-active, &:focus.is-active{
+    border-color: transparent;
+    background: $primary-color;
+    color: white;
+    cursor: default;
+  }
+  &:hover, &:focus{
+    border-color: lighten($primary-color, 20%);
+  }
+
+  @media screen and (min-width: $breakSingleColumn){
+    display: none;
+  }
+}

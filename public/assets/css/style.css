@@ -3858,3 +3858,70 @@ a.th {
     max-width: 500px; }
   .f-dropdown.large {
     max-width: 800px; }
+
+.column, .columns {
+  display: block;
+  box-sizing: border-box;
+  padding: 20px; }
+
+.day.column {
+  border-bottom: 1px solid #cccccc; }
+
+.mobile-days-controller {
+  box-sizing: border-box;
+  padding: 0 20px; }
+
+menu {
+  padding: 0; }
+
+.task.panel {
+  display: block;
+  padding: 10px 20x;
+  margin: 10px 0;
+  width: 100%; }
+
+.center {
+  text-align: center; }
+
+.subheader abbr {
+  border: none;
+  color: inherit; }
+
+.mobile-days-controller {
+  list-style: none; }
+  .mobile-days-controller li {
+    box-sizing: border-box;
+    display: block;
+    list-style: none;
+    float: left;
+    padding: 0 5px;
+    width: 20%; }
+
+.mobile-day-controller {
+  border-radius: 30px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  color: #2ba6cb;
+  display: block;
+  line-height: 1;
+  padding: 10px 0;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  width: auto; }
+  .mobile-day-controller sup {
+    display: none; }
+  .mobile-day-controller .date, .mobile-day-controller .day {
+    display: block; }
+  .mobile-day-controller .day {
+    font-weight: bold;
+    text-transform: uppercase; }
+  .mobile-day-controller.is-active, .mobile-day-controller:hover.is-active, .mobile-day-controller:focus.is-active {
+    border-color: transparent;
+    background: #2ba6cb;
+    color: white;
+    cursor: default; }
+  .mobile-day-controller:hover, .mobile-day-controller:focus {
+    border-color: #79cce3; }
+  @media screen and (min-width: 768px) {
+    .mobile-day-controller {
+      display: none; } }
