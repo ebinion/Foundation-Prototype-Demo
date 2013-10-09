@@ -120,6 +120,68 @@ menu{
       &:last-child{
         border: none;
       }
+
+      .button{
+        display: none;
+      }
+    }
+  }
+}
+.add-time-button {
+  border: 1px solid $primary-color;
+  border-radius: 10px;
+  @include button-base;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 20px;
+}
+
+// Week Header
+.week-header{
+  box-sizing: border-box;
+  padding: 0 20px;
+  position: relative;
+
+  .icon{
+    display: inline-block;
+    font-size: 18px;
+    height: 44px;
+    line-height: 44px;
+    margin: 0 5px;
+
+    @media screen and (min-width: $breakSingleColumn){
+      font-size: 24px;
+    }
+  }
+
+  .foundicon-settings, .foundicon-plus{
+    display: none;
+
+    @media screen and (min-width: $breakSingleColumn){
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+    }
+  }
+  .foundicon-plus{
+    right: 20px;
+  }
+}
+
+.week-controls{
+  text-align: center;
+  width: 100%;
+
+  li, h2{
+    display: inline;
+  }
+
+  h2 a{
+    color: inherit;
+    transition: all .2s ease-in-out;
+
+    &:hover, &:focus{
+      color: $primary-color;
     }
   }
 }

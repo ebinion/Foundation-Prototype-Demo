@@ -7486,4 +7486,88 @@ menu {
   .days-list .day-column:last-child {
     border: none;
   }
+
+  .days-list .day-column .button {
+    display: none;
+  }
+}
+
+.add-time-button {
+  border: 1px solid #2ba6cb;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: normal;
+  margin: 0 0 1.25em;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 20px;
+}
+
+.week-header {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 20px;
+  position: relative;
+}
+
+.week-header .icon {
+  display: inline-block;
+  font-size: 18px;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .week-header .icon {
+    font-size: 24px;
+  }
+}
+
+.week-header .foundicon-settings,
+.week-header .foundicon-plus {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .week-header .foundicon-settings,
+  .week-header .foundicon-plus {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+  }
+}
+
+.week-header .foundicon-plus {
+  right: 20px;
+}
+
+.week-controls {
+  text-align: center;
+  width: 100%;
+}
+
+.week-controls li,
+.week-controls h2 {
+  display: inline;
+}
+
+.week-controls h2 a {
+  color: inherit;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.week-controls h2 a:hover,
+.week-controls h2 a:focus {
+  color: #2ba6cb;
 }
