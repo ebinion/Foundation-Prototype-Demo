@@ -9,7 +9,10 @@ menu{
   margin: 10px 0;
   width: 100%;
 }
-
+.task-empty{
+  color: #aaa;
+  text-align: center;
+}
 .center{
   text-align: center;
 }
@@ -82,8 +85,16 @@ menu{
 .days-list{
   position: relative;
 
+  @media screen and (min-width: $breakSingleColumn){
+    display: table-row;
+  }
+
   .day-header{
     display: none;
+
+    @media screen and (min-width: $breakSingleColumn){
+      display: block;
+    }
   }
 
   .day-column{
@@ -92,10 +103,23 @@ menu{
     padding: 0 20px;
     margin: 0;
     left: -100%;
+    list-style: none;
     width: 100%;
 
     &.is-active{
       left: 0;
+    }
+
+    @media screen and (min-width: $breakSingleColumn){
+      border-right: 1px solid #eee;
+      display: table-cell;
+      padding: 0 20px;
+      position: static;
+      width: 20%;
+
+      &:last-child{
+        border: none;
+      }
     }
   }
 }
