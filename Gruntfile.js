@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
     watch: {
       scss: {
-        files: ['scss/**.scss'],
+        files: ['assets/scss/**.scss'],
         tasks: 'scss',
         options: {
           interrupt: true
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         }
       },
       js: {
-        files: ['js/**.js'],
+        files: ['assets/js/**.js'],
         tasks: 'js'
       },
       livereload: {
@@ -38,8 +38,8 @@ module.exports = function(grunt) {
       build: {
         files: [
           {
-            src: ['**/*.scss', '!**/_*.scss'],
-            cwd: 'scss',
+            src: ['*.scss', '!**/_*.scss'],
+            cwd: 'assets/scss',
             dest: 'tmp',
             ext: '.css',
             expand: true
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            src : ['**/*.css'],
+            src : ['*.css'],
             cwd : 'tmp',
             dest : 'public/assets/css',
             ext : '.css',
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: [
-          { expand: true, cwd: './js', src: ['./**/*.*'], dest: 'public/assets/js' }
+          { expand: true, cwd: './assets/js', src: ['./**/*.*'], dest: 'public/assets/js' }
         ]
       }
     }
