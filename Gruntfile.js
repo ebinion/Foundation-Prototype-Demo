@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
     watch: {
       scss: {
-        files: ['scss/**/*.scss', 'scss/*.scss'],
+        files: ['scss/**.scss'],
         tasks: 'scss',
         options: {
           interrupt: true
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       //   tasks: 'html'
       // },
       js: {
-        files: ['js/**/*.js'],
+        files: ['js/**.js'],
         tasks: 'js'
       },
       livereload: {
@@ -24,9 +24,9 @@ module.exports = function(grunt) {
           livereload: true
         },
         files: [
-          'public/**/*.html',
-          'public/assets/css/{,*/}*.css',
-          'public/assets/js/{,*/}*.js'
+          'public/**.html',
+          'public/assets/css/**.css',
+          'public/assets/js/**.js'
         ]
       }
     },
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
           {
             src: ['**/*.scss', '!**/_*.scss'],
             cwd: 'scss',
-            dest: 'css',
+            dest: 'tmp',
             ext: '.css',
             expand: true
           }
@@ -56,10 +56,10 @@ module.exports = function(grunt) {
         },
         files: [
           {
-            src : ['**/*.css', '!**/*autoprefixed.css'],
-            cwd : 'css',
-            dest : 'css',
-            ext : '.autoprefixed.css',
+            src : ['**/*.css'],
+            cwd : 'tmp',
+            dest : 'public/assets/css',
+            ext : '.css',
             expand : true
           }
         ]
@@ -76,11 +76,6 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      css: {
-        files: [
-          { expand: true, cwd: './css', src: ['./**/*.*'], dest: 'public/assets/css' }
-        ]
-      },
       js: {
         files: [
           { expand: true, cwd: './js', src: ['./**/*.*'], dest: 'public/assets/js' }
@@ -93,7 +88,7 @@ module.exports = function(grunt) {
   // Default task
   grunt.registerTask('default', ['sass', 'autoprefixer', 'assemble', 'copy']);
 
-  grunt.registerTask('scss', ['sass', 'autoprefixer', 'copy:css']);
+  grunt.registerTask('scss', ['sass', 'autoprefixer']);
   // grunt.registerTask('html', ['assemble']);
   grunt.registerTask('js', ['copy:js']);
 
