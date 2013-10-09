@@ -11,10 +11,13 @@ module.exports = function(grunt) {
           interrupt: true
         }
       },
-      // html: {
-      //   files: ['src/**/*.hbs'],
-      //   tasks: 'html'
-      // },
+      assets: {
+        files: ['assets/fonts/**', 'assets/images/**'],
+        tasks: 'assets',
+        options: {
+          interrupt: true
+        }
+      },
       js: {
         files: ['js/**.js'],
         tasks: 'js'
@@ -76,6 +79,16 @@ module.exports = function(grunt) {
     },
 
     copy: {
+      fonts: {
+        files: [
+          { expand: true, cwd: './assets/fonts', src: ['./**/*.*'], dest: 'public/assets/fonts' }
+        ]
+      },
+      images: {
+        files: [
+          { expand: true, cwd: './assets/images', src: ['./**/*.*'], dest: 'public/assets/images' }
+        ]
+      },
       js: {
         files: [
           { expand: true, cwd: './js', src: ['./**/*.*'], dest: 'public/assets/js' }
@@ -91,6 +104,7 @@ module.exports = function(grunt) {
   grunt.registerTask('scss', ['sass', 'autoprefixer']);
   // grunt.registerTask('html', ['assemble']);
   grunt.registerTask('js', ['copy:js']);
+  grunt.registerTask('assets', ['copy:fonts', 'copy:images']);
 
   grunt.registerTask('dev', ['connect', 'watch']);
   // grunt.registerTask('deploy', ['gh-pages']);
