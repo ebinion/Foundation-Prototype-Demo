@@ -1,0 +1,20 @@
+@mixin self-clear() {
+  &:after, &:before{
+    display: table;
+    content: "";
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+
+// Breakpoints
+$breakSingleColumn: 768px;
+
+// Need a different grid for dates
+.column, .columns{
+  display: block;
+  box-sizing: border-box;
+  padding: 20px;
+}
