@@ -5,12 +5,6 @@
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
-# Reload the browser automatically whenever files change
-activate :livereload
-
-# Autoprefix CSS
-activate :autoprefixer
-
 # Directory Indexes
 activate :directory_indexes
 
@@ -30,6 +24,9 @@ set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
+  # Autoprefix CSS
+  activate :autoprefixer
+
   # For example, change the Compass output style for deployment
   activate :minify_css
 
@@ -45,3 +42,6 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+# Reload the browser automatically whenever files change
+activate :livereload

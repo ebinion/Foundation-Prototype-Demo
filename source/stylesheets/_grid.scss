@@ -1,3 +1,26 @@
+// VARIABLES
+
+// Breakpoints
+$breakSingleColumn: 768px;
+
+// Easings
+$easeOut: cubic-bezier(0.3, 0.0, 0.0, 1.5);
+
+// MIXINS
+@mixin grid($columns: 5, $class: "small"){
+  @for $i from 1 through $columns{
+    .#{$class}-#{$i}{
+      width: ($i / $columns) * 100%;
+    }
+  }
+  .#{$class}-half{
+    width: 50%;
+  }
+  .#{$class}-full{
+    width: 100%;
+  }
+}
+
 @mixin self-clear() {
   &:after, &:before{
     display: table;
@@ -8,13 +31,61 @@
   }
 }
 
+// STYLES
 
-// Breakpoints
-$breakSingleColumn: 768px;
+// Base Grid
+.main{
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+  @include self-clear;
+}
 
-// Need a different grid for dates
 .column, .columns{
   display: block;
   box-sizing: border-box;
+  float: left;
   padding: 20px;
+}
+
+@include grid;
+
+// Specfic Grids
+.calendar-grid, .timeform-grid{
+  transform: 3d(0 0 0 0);
+  width: 100%;
+}
+.calendar-grid{
+  position: relative;
+  z-index: 1;
+}
+
+.timeform-grid{
+  box-sizing: content-box;
+  padding: 0 20%;
+  position: absolute;
+  left: 100%;
+  @include self-clear;
+  transition: .4s left $easeOut;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  &.is-showing{
+    left: -20%;
+  }
+}
+
+.timeform{
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
+}
+
+.form-fields{
+  list-style: none;
+
+  .column, .columns{
+    padding: 0 10px;
+  }
 }

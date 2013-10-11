@@ -1,5 +1,5 @@
 ---
-title: Welcome to Middleman
+title: Timesheet Prototype
 ---
 
 <menu class="week-header">
@@ -45,7 +45,7 @@ title: Welcome to Middleman
         <a href="#" class="panel task">
           <strong>6 hours</strong> on Project Name for Client Name
         </a>
-        <a href="#add-time" class="button expand">
+        <a href="#add-time" class="button expand js-trigger-timeform">
           <i class="foundicon-plus"></i> Add time
         </a>
       </article>
@@ -58,7 +58,7 @@ title: Welcome to Middleman
         <a href="#" class="panel task">
           <strong>8 hours</strong> on Project Name for Client Name
         </a>
-        <a href="#add-time" class="button expand">
+        <a href="#add-time" class="button expand js-trigger-timeform">
           <i class="foundicon-plus"></i> Add time
         </a>
       </article>
@@ -70,7 +70,7 @@ title: Welcome to Middleman
         </header>
         <div class="task-empty">Nothing billed yet</div>
       </article>
-      <a href="#add-time" class="button expand">
+      <a href="#add-time" class="button expand js-trigger-timeform">
         <i class="foundicon-plus"></i> Add time
       </a>
     </li>
@@ -81,7 +81,7 @@ title: Welcome to Middleman
         </header>
         <div class="task-empty">Nothing billed yet</div>
       </article>
-      <a href="#add-time" class="button expand">
+      <a href="#add-time" class="button expand js-trigger-timeform">
         <i class="foundicon-plus"></i> Add time
       </a>
     </li>
@@ -92,12 +92,58 @@ title: Welcome to Middleman
         </header>
         <div class="task-empty">Nothing billed yet</div>
       </article>
-      <a href="#add-time" class="button expand">
+      <a href="#add-time" class="button expand js-trigger-timeform">
         <i class="foundicon-plus"></i> Add time
       </a>
     </li>
   </ol>
 </section>
-<section class="timeform-grid">
 
+<section class="timeform-grid" id="time-form">
+  <form action="" class="timeform custom">
+    <h2>Enter your time</h2>
+    <ul class="form-fields">
+      <li>
+        <label for="entry-date">Day</label>
+        <select name="entry-date" id="entry-date" class="custom dropdown">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+      </li>
+      <li>
+        <label for="entry-client">Client</label>
+        <select name="entry-client" id="entry-client" class="custom dropdown">
+          <option value="Super Awesome Happy Client">Super Awesome Happy Client</option>
+          <option value="My Company">My Company</option>
+        </select>
+      </li>
+      <li>
+        <label for="entry-project">Project</label>
+        <select name="entry-project" id="entry-project" class="custom dropdown">
+          <option value="Super Awesome Happy Client">Big Website Redesign Project</option>
+          <option value="My Company">Some Other Project</option>
+        </select>
+      </li>
+      <li>
+        <fieldset>
+          <legend>Time</legend>
+
+          <label for="entry-hours" title="hours" class="small-half column">
+            <input name="entry-hours" type="number" class="small" min="0" max="24" value="8" step="1" pattern="[0-9]*">hrs
+          </label>
+          <label for="entry-mins" title="minutes" class="small-half column">
+            <input name="entry-mins" type="number" class="small" value="0" step="15" min="0" max="60" pattern="[0-9]*" title="minutes">mins
+          </label>
+        </fieldset>
+      </li>
+      <li>
+        <button class="button large expand" id="time-form-save">Save</button>
+      </li>
+    </ul>
+  </form>
 </section>

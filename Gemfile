@@ -20,5 +20,7 @@ platforms :mri_18 do
 end
 
 # For Heroku deployment
-gem "rack-contrib", "~> 1.1.0"
-gem "puma", "~> 2.6.0"
+group :production do
+  gem "rack-contrib", "~> 1.1.0"
+  gem "puma", "~> 2.6.0"
+end
