@@ -2,18 +2,19 @@
 title: Timesheet Prototype
 ---
 
-<menu class="week-header">
-  <a href="#settings" class="foundicon-settings icon" title="Settings"></a>
 
-  <ul class="week-controls">
-    <li><a href="#previous-week" class="foundicon-left-arrow icon"></a></li>
-    <li><h2><a href="#months">October 2013</a></h2></li>
-    <li><a href="#next-week" class="foundicon-right-arrow icon"></a></li>
-  </ul>
+<section id="calendar-grid" class="calendar-grid">
+  <menu class="week-header">
+    <a href="#settings" class="foundicon-settings icon" title="Settings"></a>
 
-  <a href="#add-time" class="foundicon-plus icon" title="Add Time"></a>
-</menu>
-<section class="calendar-grid">
+    <ul class="week-controls">
+      <li><a href="#previous-week" class="foundicon-left-arrow icon"></a></li>
+      <li><h2><a href="#months">October 2013</a></h2></li>
+      <li><a href="#next-week" class="foundicon-right-arrow icon"></a></li>
+    </ul>
+
+    <a href="#add-time" class="foundicon-plus icon js-trigger-timeform" title="Add Time"></a>
+  </menu>
   <menu>
     <ol class="mobile-days-controller">
       <li>
@@ -34,7 +35,7 @@ title: Timesheet Prototype
     </ol>
   </menu>
   <ol class="days-list">
-    <li class="day-column">
+    <li id="monday" class="day-column">
       <article class="day-group">
         <header class="day-header">
           <h3 class="subheader center"><date title="date will appear here">Mon 26<sup>th</sup></date></h3>
@@ -50,7 +51,7 @@ title: Timesheet Prototype
         </a>
       </article>
     </li>
-    <li class="day-column is-active">
+    <li id="tuesday" class="day-column is-active">
       <article class="day-group">
         <header class="day-header">
           <h3 class="subheader center"><date title="date will appear here">Tue 27<sup>th</sup></date></h3>
@@ -63,7 +64,7 @@ title: Timesheet Prototype
         </a>
       </article>
     </li>
-    <li class="day-column">
+    <li id="wednesday" class="day-column">
       <article class="day-group">
         <header class="day-header">
           <h3 class="subheader center"><date title="date will appear here">Wed 28<sup>th</sup></date></h3>
@@ -74,7 +75,7 @@ title: Timesheet Prototype
         <i class="foundicon-plus"></i> Add time
       </a>
     </li>
-    <li class="day-column">
+    <li id="thursday" class="day-column">
       <article class="day-group">
         <header class="day-header">
           <h3 class="subheader center"><date title="date will appear here">Thr 29<sup>th</sup></date></h3>
@@ -85,7 +86,7 @@ title: Timesheet Prototype
         <i class="foundicon-plus"></i> Add time
       </a>
     </li>
-    <li class="day-column">
+    <li id="friday" class="day-column">
       <article class="day-group">
         <header class="day-header">
           <h3 class="subheader center"><date title="date will appear here">Fri 30<sup>th</sup></date></h3>
@@ -99,20 +100,21 @@ title: Timesheet Prototype
   </ol>
 </section>
 
-<section class="timeform-grid" id="time-form">
+<section id="time-form" class="timeform-grid">
   <form action="" class="timeform custom">
+    <a href="#calendar-grid" class="cancel">close</a>
     <h2>Enter your time</h2>
     <ul class="form-fields">
-      <li>
-        <label for="entry-date">Day</label>
-        <select name="entry-date" id="entry-date" class="custom dropdown">
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wednesday">Wednesday</option>
+      <li class="entry-day-group">
+        <label for="entry-day">Day</label>
+        <select name="entry-day" id="entry-day" class="custom dropdown">
+          <option value="monday">Monday</option>
+          <option value="tuesday" selected>Tuesday</option>
+          <option value="wednesday">Wednesday</option>
           <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-          <option value="Sunday">Sunday</option>
+          <option value="friday">Friday</option>
+<!--           <option value="saturday">Saturday</option>
+          <option value="sunday">Sunday</option> -->
         </select>
       </li>
       <li>
@@ -125,8 +127,8 @@ title: Timesheet Prototype
       <li>
         <label for="entry-project">Project</label>
         <select name="entry-project" id="entry-project" class="custom dropdown">
-          <option value="Super Awesome Happy Client">Big Website Redesign Project</option>
-          <option value="My Company">Some Other Project</option>
+          <option value="Big Website Redesign Project">Big Website Redesign Project</option>
+          <option value="Some Other Project">Some Other Project</option>
         </select>
       </li>
       <li>
@@ -134,10 +136,10 @@ title: Timesheet Prototype
           <legend>Time</legend>
 
           <label for="entry-hours" title="hours" class="small-half column">
-            <input name="entry-hours" type="number" class="small" min="0" max="24" value="8" step="1" pattern="[0-9]*">hrs
+            <input name="entry-hours" id="entry-hours" type="number" class="small" min="0" max="24" value="8" step="1" pattern="[0-9]*">hrs
           </label>
           <label for="entry-mins" title="minutes" class="small-half column">
-            <input name="entry-mins" type="number" class="small" value="0" step="15" min="0" max="60" pattern="[0-9]*" title="minutes">mins
+            <input name="entry-mins" id="entry-mins" type="number" class="small" value="0" step="15" min="0" max="60" pattern="[0-9]*" title="minutes">mins
           </label>
         </fieldset>
       </li>

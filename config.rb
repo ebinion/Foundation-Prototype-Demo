@@ -25,7 +25,7 @@ set :images_dir, 'images'
 # Build-specific configuration
 configure :build do
   # Autoprefix CSS
-  activate :autoprefixer
+  activate :autoprefixer, browsers: 'last 2 versions'
 
   # For example, change the Compass output style for deployment
   activate :minify_css

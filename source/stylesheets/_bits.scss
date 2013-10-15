@@ -1,0 +1,49 @@
+// VARIABLES
+
+// Breakpoints
+$breakSingleColumn: 768px;
+
+// Easings
+$easeOut: cubic-bezier(0.3, 0.0, 0.0, 1.5);
+
+// MIXINS
+@mixin grid($columns: 5, $class: "small"){
+  @for $i from 1 through $columns{
+    .#{$class}-#{$i}{
+      width: ($i / $columns) * 100%;
+    }
+  }
+  .#{$class}-half{
+    width: 50%;
+  }
+  .#{$class}-full{
+    width: 100%;
+  }
+}
+
+@mixin self-clear() {
+  &:after, &:before{
+    display: table;
+    content: "";
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+@mixin animation($props){
+  -webkit-animation: $props;
+  animation: $props;
+}
+
+@mixin keyframes($name){
+  @-moz-keyframes $name{
+    @content
+  }
+  @-webkit-keyframes $name{
+    @content
+  }
+  @keyframes $name{
+    @content
+  }
+}

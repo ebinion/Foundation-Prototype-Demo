@@ -8,7 +8,32 @@ menu{
   padding: 10px 20px;
   margin: 10px 0;
   width: 100%;
+
+  &.is-new{
+    $color: #ff0;
+    background: lighten($color, 40%);
+    @include animation( zoom-in .6s $easeOut 0 1 both);
+  }
 }
+
+@include keyframes(zoom-in){
+  from {
+    @include transform( scale3d(0.5, 0.5, 1) );
+  }
+  to {
+    @include transform( scale3d(1, 1, 1) );
+  }
+}
+
+@include keyframes(zoom-out){
+  from {
+    @include transform( scale3d(1, 1, 1) );
+  }
+  to {
+    @include transform( scale3d(.7, .7, 1) );
+  }
+}
+
 .task-empty{
   color: #aaa;
   text-align: center;
@@ -22,6 +47,9 @@ menu{
   color: inherit;
 }
 
+.calendar-grid.is-hidden{
+  // @include animation( zoom-out .6s $easeOut .3s 1 both);
+}
 
 // Days controller
 .mobile-days-controller{
@@ -187,6 +215,19 @@ menu{
 }
 
 // Time form (style only)
-.timeform-grid{
-  background: white;
+.entry-day-group{
+  display: none;
+
+  @media screen and (min-width: $breakSingleColumn){
+    display: block;
+  }
+}
+
+.cancel{
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  top: 0;
+  right: 20px;
 }

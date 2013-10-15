@@ -1,42 +1,8 @@
-// VARIABLES
-
-// Breakpoints
-$breakSingleColumn: 768px;
-
-// Easings
-$easeOut: cubic-bezier(0.3, 0.0, 0.0, 1.5);
-
-// MIXINS
-@mixin grid($columns: 5, $class: "small"){
-  @for $i from 1 through $columns{
-    .#{$class}-#{$i}{
-      width: ($i / $columns) * 100%;
-    }
-  }
-  .#{$class}-half{
-    width: 50%;
-  }
-  .#{$class}-full{
-    width: 100%;
-  }
-}
-
-@mixin self-clear() {
-  &:after, &:before{
-    display: table;
-    content: "";
-  }
-  &:after{
-    clear: both;
-  }
-}
-
-// STYLES
-
 // Base Grid
 .main{
   min-height: 600px;
   overflow: hidden;
+  @include perspective(2000px);
   position: relative;
   @include self-clear;
 }
@@ -52,27 +18,75 @@ $easeOut: cubic-bezier(0.3, 0.0, 0.0, 1.5);
 
 // Specfic Grids
 .calendar-grid, .timeform-grid{
-  transform: 3d(0 0 0 0);
   width: 100%;
 }
 .calendar-grid{
   position: relative;
   z-index: 1;
+
+  &.is-showing{
+    @media screen and (min-width: $breakSingleColumn){
+      @include animation(panel-focus .3s $easeOut 0 both);
+    }
+  }
+
+  &.is-hidden{
+    @media screen and (min-width: $breakSingleColumn){
+      @include animation(panel-blur .3s $easeOut 0 both);
+    }
+  }
+}
+
+@include keyframes(panel-blur){
+  from{
+    opacity: 1;
+    @include transform( scale3d(1, 1, 1) );
+    transform-style: preserve-3d;
+  }
+  to{
+    opacity: 0.5;
+    @include transform( scale3d(.85, .85, .5) );
+    transform-style: preserve-3d;
+  }
+}
+
+@include keyframes(panel-focus){
+  to{
+    opacity: 1;
+    @include transform( scale3d(1, 1, 1) );
+    transform-style: preserve-3d;
+  }
+  from{
+    opacity: 0.5;
+    @include transform( scale3d(.85, .85, .5) );
+    transform-style: preserve-3d;
+  }
 }
 
 .timeform-grid{
+  background: white;
   box-sizing: content-box;
   padding: 0 20%;
   position: absolute;
   left: 100%;
   @include self-clear;
-  transition: .4s left $easeOut;
+  transition: .4s left $easeOut .2s;
   top: 0;
   width: 100%;
   z-index: 999;
 
+  @media screen and (min-width: $breakSingleColumn){
+    box-sizing: border-box;
+    background: none;
+    padding: 0 0 0 66%;
+  }
+
   &.is-showing{
     left: -20%;
+
+    @media screen and (min-width: $breakSingleColumn){
+      left: 0%;
+    }
   }
 }
 
@@ -80,6 +94,11 @@ $easeOut: cubic-bezier(0.3, 0.0, 0.0, 1.5);
   box-sizing: border-box;
   padding: 20px;
   width: 100%;
+
+  @media screen and (min-width: $breakSingleColumn){
+    background: #fff;
+    box-shadow: rgba(0,0,0,.2) -3px 0 5px;
+  }
 }
 
 .form-fields{

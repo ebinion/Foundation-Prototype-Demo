@@ -1,10 +1,12 @@
 // Manifest file for Sass.
 // Don't put styles here, @import only please.
 
+@import "compass/css3";
+
 @import "normalize",
 "foundation",
   "foundation/foundation_icons_general_enclosed/general_enclosed_foundicons",
   "foundation/foundation_icons_general/general_foundicons";
 
-@import "grid",
+@import "bits", "grid",
   "extends";
