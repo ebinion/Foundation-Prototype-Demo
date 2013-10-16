@@ -132,6 +132,7 @@ menu{
     margin: 0;
     left: -100%;
     list-style: none;
+    transition: left .3s ease-in-out;
     width: 100%;
 
     &.is-active{
@@ -143,6 +144,7 @@ menu{
       display: table-cell;
       padding: 0 20px;
       position: static;
+      transition: none;
       width: 20%;
 
       &:last-child{
@@ -230,4 +232,10 @@ menu{
   position: absolute;
   top: 0;
   right: 20px;
+}
+
+.task-empty{
+  display: block;
+  padding: 10px 0;
+  width: 100%;
 }

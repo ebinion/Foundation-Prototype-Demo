@@ -5,12 +5,12 @@ title: Timesheet Prototype
 
 <section id="calendar-grid" class="calendar-grid">
   <menu class="week-header">
-    <a href="#settings" class="foundicon-settings icon" title="Settings"></a>
+    <a href="#settings" class="foundicon-settings icon js-deadLink" title="Settings"></a>
 
     <ul class="week-controls">
-      <li><a href="#previous-week" class="foundicon-left-arrow icon"></a></li>
+      <li><a href="#previous-week" class="foundicon-left-arrow icon js-deadLink"></a></li>
       <li><h2><a href="#months">October 2013</a></h2></li>
-      <li><a href="#next-week" class="foundicon-right-arrow icon"></a></li>
+      <li><a href="#next-week" class="foundicon-right-arrow icon js-deadLink"></a></li>
     </ul>
 
     <a href="#add-time" class="foundicon-plus icon js-trigger-timeform" title="Add Time"></a>
@@ -34,7 +34,7 @@ title: Timesheet Prototype
       </li>
     </ol>
   </menu>
-  <ol class="days-list">
+  <ol class="days-list is-monday">
     <li id="monday" class="day-column">
       <article class="day-group">
         <header class="day-header">
@@ -56,9 +56,7 @@ title: Timesheet Prototype
         <header class="day-header">
           <h3 class="subheader center"><date title="date will appear here">Tue 27<sup>th</sup></date></h3>
         </header>
-        <a href="#" class="panel task">
-          <strong>8 hours</strong> on Project Name for Client Name
-        </a>
+        <div class="task-empty">Nothing billed yet</div>
         <a href="#add-time" class="button expand js-trigger-timeform">
           <i class="foundicon-plus"></i> Add time
         </a>
@@ -111,7 +109,7 @@ title: Timesheet Prototype
           <option value="monday">Monday</option>
           <option value="tuesday" selected>Tuesday</option>
           <option value="wednesday">Wednesday</option>
-          <option value="Thursday">Thursday</option>
+          <option value="thursday">Thursday</option>
           <option value="friday">Friday</option>
 <!--           <option value="saturday">Saturday</option>
           <option value="sunday">Sunday</option> -->
