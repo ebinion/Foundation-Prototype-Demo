@@ -45,6 +45,8 @@ end
 
 activate :deploy do |deploy|
   deploy.build_before = true
+  deploy.branch = "gh-pages"
+  deploy.method = :git
 end
 
 # Reload the browser automatically whenever files change
