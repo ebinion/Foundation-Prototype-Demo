@@ -14,7 +14,7 @@ activate :directory_indexes
 #     "Helping"
 #   end
 # end
-set :build_dir, "tmp"
+set :build_dir, "build"
 
 set :css_dir, 'stylesheets'
 
