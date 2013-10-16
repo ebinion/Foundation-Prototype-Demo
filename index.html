@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>Timesheet Prototype</title>
+
+  <link href="stylesheets/style-f0633939.css" media="screen" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="index">
+  <header class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+        <h1 class="logo"><a href="#" class="js-deadLink">Timesheet Prototype</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#" class="js-deadLink"><span>Menu</span></a></li>
+    </ul>
+    <nav class="top-bar-section">
+      <ul class="right">
+        <li><a href="#" class="js-deadLink">Ezekiel Binion, logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main">
+    <section id="calendar-grid" class="calendar-grid">
+  <menu class="week-header">
+    <a href="#settings" class="foundicon-settings icon js-deadLink" title="Settings"></a>
+
+    <ul class="week-controls">
+      <li><a href="#previous-week" class="foundicon-left-arrow icon js-deadLink"></a></li>
+      <li><h2><a href="#months" class="js-deadLink">October 2013</a></h2></li>
+      <li><a href="#next-week" class="foundicon-right-arrow icon js-deadLink"></a></li>
+    </ul>
+
+    <a href="#add-time" class="foundicon-plus icon js-trigger-timeform" title="Add Time"></a>
+  </menu>
+  <menu>
+    <ol class="mobile-days-controller">
+      <li>
+        <a href="#monday" class="mobile-day-controller"><date title="date will appear here"><span class="day">Mon</span> <span class="date">26</span><sup>th</sup></date></a>
+      </li>
+      <li>
+        <a href="#tuesday" class="mobile-day-controller is-active"><date title="date will appear here"><span class="day">Tue</span> <span class="date">27</span><sup>th</sup></date></a>
+      </li>
+      <li>
+        <a href="#wednesday" class="mobile-day-controller"><date title="date will appear here"><span class="day">Wed</span> <span class="date">28</span><sup>th</sup></date></a>
+      </li>
+      <li>
+        <a href="#thursday" class="mobile-day-controller"><date title="date will appear here"><span class="day">Thr</span> <span class="date">29</span><sup>th</sup></date></a>
+      </li>
+      <li>
+        <a href="#friday" class="mobile-day-controller"><date title="date will appear here"><span class="day">Fri</span> <span class="date">30</span><sup>th</sup></date></a>
+      </li>
+    </ol>
+  </menu>
+  <ol class="days-list is-monday">
+    <li id="monday" class="day-column">
+      <article class="day-group">
+        <header class="day-header">
+          <h3 class="subheader center"><date title="date will appear here">Mon 26<sup>th</sup></date></h3>
+        </header>
+        <a href="#" class="panel task">
+          <strong>4 hours</strong> on Project Name for Client Name
+        </a>
+        <a href="#" class="panel task">
+          <strong>6 hours</strong> on Project Name for Client Name
+        </a>
+        <a href="#add-time" class="button expand js-trigger-timeform">
+          <i class="foundicon-plus"></i> Add time
+        </a>
+      </article>
+    </li>
+    <li id="tuesday" class="day-column is-active">
+      <article class="day-group">
+        <header class="day-header">
+          <h3 class="subheader center"><date title="date will appear here">Tue 27<sup>th</sup></date></h3>
+        </header>
+        <div class="task-empty">Nothing billed yet</div>
+        <a href="#add-time" class="button expand js-trigger-timeform">
+          <i class="foundicon-plus"></i> Add time
+        </a>
+      </article>
+    </li>
+    <li id="wednesday" class="day-column">
+      <article class="day-group">
+        <header class="day-header">
+          <h3 class="subheader center"><date title="date will appear here">Wed 28<sup>th</sup></date></h3>
+        </header>
+        <div class="task-empty">Nothing billed yet</div>
+      </article>
+      <a href="#add-time" class="button expand js-trigger-timeform">
+        <i class="foundicon-plus"></i> Add time
+      </a>
+    </li>
+    <li id="thursday" class="day-column">
+      <article class="day-group">
+        <header class="day-header">
+          <h3 class="subheader center"><date title="date will appear here">Thr 29<sup>th</sup></date></h3>
+        </header>
+        <div class="task-empty">Nothing billed yet</div>
+      </article>
+      <a href="#add-time" class="button expand js-trigger-timeform">
+        <i class="foundicon-plus"></i> Add time
+      </a>
+    </li>
+    <li id="friday" class="day-column">
+      <article class="day-group">
+        <header class="day-header">
+          <h3 class="subheader center"><date title="date will appear here">Fri 30<sup>th</sup></date></h3>
+        </header>
+        <div class="task-empty">Nothing billed yet</div>
+      </article>
+      <a href="#add-time" class="button expand js-trigger-timeform">
+        <i class="foundicon-plus"></i> Add time
+      </a>
+    </li>
+  </ol>
+</section>
+
+<section id="time-form" class="timeform-grid">
+  <form action="" class="timeform custom">
+    <a href="#calendar-grid" class="cancel">close</a>
+    <h2>Enter your time</h2>
+    <ul class="form-fields">
+      <li class="entry-day-group">
+        <label for="entry-day">Day</label>
+        <select name="entry-day" id="entry-day" class="custom dropdown">
+          <option value="monday">Monday</option>
+          <option value="tuesday" selected>Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+<!--           <option value="saturday">Saturday</option>
+          <option value="sunday">Sunday</option> -->
+        </select>
+      </li>
+      <li>
+        <label for="entry-client">Client</label>
+        <select name="entry-client" id="entry-client" class="custom dropdown">
+          <option value="Super Awesome Happy Client">Super Awesome Happy Client</option>
+          <option value="My Company">My Company</option>
+        </select>
+      </li>
+      <li>
+        <label for="entry-project">Project</label>
+        <select name="entry-project" id="entry-project" class="custom dropdown">
+          <option value="Big Website Redesign Project">Big Website Redesign Project</option>
+          <option value="Some Other Project">Some Other Project</option>
+        </select>
+      </li>
+      <li>
+        <fieldset>
+          <legend>Time</legend>
+
+          <label for="entry-hours" title="hours" class="small-half column">
+            <input name="entry-hours" id="entry-hours" type="number" class="small" min="0" max="24" value="8" step="1" pattern="[0-9]*">hrs
+          </label>
+          <label for="entry-mins" title="minutes" class="small-half column">
+            <input name="entry-mins" id="entry-mins" type="number" class="small" value="0" step="15" min="0" max="60" pattern="[0-9]*" title="minutes">mins
+          </label>
+        </fieldset>
+      </li>
+      <li>
+        <button class="button large expand" id="time-form-save">Save</button>
+      </li>
+    </ul>
+  </form>
+</section>
+
+  </div>
+
+  <script src="javascripts/all-cf8f98dc.js" type="text/javascript"></script>
+</body>
+</html>
